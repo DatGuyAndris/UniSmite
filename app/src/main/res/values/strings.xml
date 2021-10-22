@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">UniSmite</string>
+    <string name="accsearch"> Search for an Account</string>
+
+    <string name="searchbutton">Search</string>
+    <string name="shortlistbutton">Shortlist</string>
+    <string name="homebutton">Home</string>
+    <string name="result">Game Result</string>
+    <string name="acclevel">Level 128</string>
+    <string name="masteries">God Masteries 102</string>
+    <string name="KDA">K/D/A 12/1/15</string>
+    <string name="gamehistory">Match History</string>
+    <string name="godlist">Gods</string>
+</resources>
