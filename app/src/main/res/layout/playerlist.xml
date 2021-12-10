@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/img_userImg"
+        android:id="@+id/img_lasttank"
         android:layout_width="93dp"
         android:layout_height="85dp"
         android:layout_marginStart="32dp"
@@ -24,28 +24,28 @@
         android:text="FriendlyForeigner"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/img_userImg"
-        app:layout_constraintTop_toTopOf="@+id/img_userImg" />
+        app:layout_constraintStart_toEndOf="@+id/img_lasttank"
+        app:layout_constraintTop_toTopOf="@+id/img_lasttank" />
 
     <TextView
-        android:id="@+id/tv_rank"
+        android:id="@+id/tv_battles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Silver 2"
-        app:layout_constraintStart_toEndOf="@+id/img_userImg"
+        android:text="Battles Played"
+        app:layout_constraintStart_toEndOf="@+id/img_lasttank"
         app:layout_constraintTop_toBottomOf="@+id/tv_username" />
 
     <TextView
-        android:id="@+id/tv_gamemode"
+        android:id="@+id/tv_lastresult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Game Mode"
-        app:layout_constraintStart_toEndOf="@+id/img_userImg"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rank" />
+        android:text="Last Result"
+        app:layout_constraintStart_toEndOf="@+id/img_lasttank"
+        app:layout_constraintTop_toBottomOf="@+id/tv_battles" />
 
     <TextView
         android:id="@+id/tv_Status"
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:text="Online"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_gamemode"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_lastresult"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_username" />
 

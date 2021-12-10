@@ -1,4 +1,4 @@
-package com.example.unismite;
+package com.example.WoTStat;
 
 import android.content.Context;
 
