@@ -5,6 +5,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,8 +33,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 // Tag message
     private static final String TAG = "ResponseSuccess";
 
-    private String nickname;
+    public List<Stat> stats;
+    public List<Stat> getStats() {
+        return stats;
+    }
+    public void setStats(List<Stat> stats) {
+        this.stats= stats;
+    }
 
+    public void recyclerViewMaker() {
+
+
+        //stats = getStats();
+        //RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        //RecyclerView.Adapter adapter = new StatRecyclerViewAdapter(getApplicationContext(),stats);
+        //new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recyclerView);
+        //recyclerView.setAdapter(adapter);
+
+
+    }
 
 
     @Override
@@ -38,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d(TAG, "onCreate: Starting.");
-
 
 
 
@@ -71,21 +91,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         Log.d(TAG, response);
                         Log.d(TAG, url);
 
-                        // Trying to get the data from the response into an array, deleted the class required
-                        //as it wasnt finished and was making the project red. Just keeping this here for the future
-                    try {
-                        JSONObject rootObject = new JSONObject(response);
-                        JSONObject accountIdObj = rootObject.getJSONObject("account_id");
-                        JSONArray nicknameArray = rootObject.getJSONArray("nickname");
-                        for (int i=0, j = nicknameArray.length(); i < j; i++) {
-                            JSONObject nicknameObject = nicknameArray.getJSONObject(1);
+                        JsonConverter converter = new JsonConverter();
+                        List<Stat> stats = converter.JsonToStat(response);
+                        setStats(stats);
+                        recyclerViewMaker();
 
 
-                        }
+                        
 
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
                     }
                 }, new Response.ErrorListener() {
                     @Override
