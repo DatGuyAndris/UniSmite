@@ -23,10 +23,7 @@ public class JsonConverter {
                 stat.setGamesPlayed(resultObject.getString("account_id"));
                 stats.add(stat);
 
-
             }
-
-
 
         } catch (JSONException e) {
             e.printStackTrace();
